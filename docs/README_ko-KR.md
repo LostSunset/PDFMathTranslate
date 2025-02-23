@@ -91,7 +91,7 @@ $env:HF_ENDPOINT = https://hf-mirror.com
 
 <h3 id="cmd">방법 1. 커맨드라인 도구</h3>
 
-1. Python이 설치되어 있어야 합니다 (버전 3.8 <= 버전 <= 3.12)
+1. Python이 설치되어 있어야 합니다 (버전 3.10 <= 버전 <= 3.12)
 2. 패키지를 설치합니다:
 
    ```bash
@@ -112,7 +112,7 @@ Python 환경을 미리 설치할 필요가 없습니다.
 
 <h3 id="gui">방법 3. GUI</h3>
 
-1. Python이 설치되어 있어야 합니다 (버전 3.8 <= 버전 <= 3.12)
+1. Python이 설치되어 있어야 합니다 (버전 3.10 <= 버전 <= 3.12)
 2. 패키지를 설치합니다:
 
    ```bash
@@ -237,7 +237,7 @@ pdf2zh example.pdf -li en -lo ko
 | **Argos Translate** | `argos`        |                                                                       |                                                          | [argos-translate](https://github.com/argosopentech/argos-translate) 참조                                                                                                                                   |
 | **Grok**            | `grok`         | `GORK_API_KEY`, `GORK_MODEL`                                          | `[Your GORK_API_KEY]`, `grok-2-1212`                     | [Grok](https://docs.x.ai/docs/overview) 참조                                                                                                                                                               |
 | **DeepSeek**        | `deepseek`     | `DEEPSEEK_API_KEY`, `DEEPSEEK_MODEL`                                  | `[Your DEEPSEEK_API_KEY]`, `deepseek-chat`               | [DeepSeek](https://www.deepseek.com/) 참조                                                                                                                                                                 |
-| **OpenAI-Liked**    | `openai-liked` | `OPENAILIKE_BASE_URL`, `OPENAILIKE_API_KEY`, `OPENAILIKE_MODEL`       | `url`, `[Your Key]`, `model name`                        | 없음                                                                                                                                                                                                       |
+| **OpenAI-Liked**    | `openailiked` | `OPENAILIKED_BASE_URL`, `OPENAILIKED_API_KEY`, `OPENAILIKED_MODEL`       | `url`, `[Your Key]`, `model name`                        | 없음                                                                                                                                                                                                       |
 
 위 표에 없는 OpenAI API와 호환되는 대형 언어 모델의 경우, 표의 OpenAI와 동일한 방식으로 환경 변수를 설정할 수 있습니다.
 
