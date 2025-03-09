@@ -15,7 +15,7 @@ try:
     import argostranslate.translate
 except ImportError:
     logger.warning(
-        "argos-translate is not installed, argostranslate will not work. if you want to use argostranslate, please install it."
+        "argos-translate is not installed, if you want to use argostranslate, please install it. If you don't use argostranslate translator, you can safely ignore this warning."
     )
 
 import deepl
@@ -34,6 +34,11 @@ from tencentcloud.tmt.v20180321.tmt_client import TmtClient
 
 from pdf2zh.cache import TranslationCache
 from pdf2zh.config import ConfigManager
+
+
+from tenacity import retry, retry_if_exception_type
+from tenacity import stop_after_attempt
+from tenacity import wait_exponential
 
 
 def remove_control_characters(s):
@@ -427,6 +432,15 @@ class OpenAITranslator(BaseTranslator):
         self.add_cache_impact_parameters("think_filter_regex", think_filter_regex)
         self.think_filter_regex = re.compile(think_filter_regex, flags=re.DOTALL)
 
+    @retry(
+        retry=retry_if_exception_type(openai.RateLimitError),
+        stop=stop_after_attempt(100),
+        wait=wait_exponential(multiplier=1, min=1, max=15),
+        before_sleep=lambda retry_state: logger.warning(
+            f"RateLimitError, retrying in {retry_state.next_action.sleep} seconds... "
+            f"(Attempt {retry_state.attempt_number}/100)"
+        ),
+    )
     def do_translate(self, text) -> str:
         response = self.client.chat.completions.create(
             model=self.model,
