@@ -13,6 +13,7 @@
 - [Authorization](#auth)
 - [Custom configuration file](#cofig)
 - [Fonts Subseting](#fonts-subset)
+- [Translation cache](#cache)
 
 ---
 
@@ -259,3 +260,59 @@ pdf2zh example.pdf --skip-subset-fonts
 [⬆️ Back to top](#toc)
 
 ---
+
+<h3 id="cache">Translation cache</h3>
+
+PDFMathTranslate caches translated texts to increase speed and avoid unnecessary API calls for same contents. You can use `--ignore-cache` option to ignore translation cache and force retranslation.
+
+```bash
+pdf2zh example.pdf --ignore-cache
+```
+
+[⬆️ Back to top](#toc)
+
+---
+
+<h3 id="public-services">Deployment as a public services</h3>
+
+PDFMathTranslate has added the features of **enabling partial services** and **hiding Backend information** in 
+the configuration file. You can enable these by setting `ENABLED_SERVICES` and `HIDDEN_GRADIO_DETAILS` in the 
+configuration file. Among them:
+
+- `ENABLED_SERVICES` allows you to choose to enable only certain options, limiting the number of available services.
+- `HIDDEN_GRADIO_DETAILS` will hide the real API_KEY on the web, preventing users from obtaining server-side keys.
+
+A usable configuration is as follows:
+
+```json
+{
+    "USE_MODELSCOPE": "0",
+    "translators": [
+        {
+            "name": "grok",
+            "envs": {
+                "GORK_API_KEY": null,
+                "GORK_MODEL": "grok-2-1212"
+            }
+        },
+        {
+            "name": "openai",
+            "envs": {
+                "OPENAI_BASE_URL": "https://api.openai.com/v1",
+                "OPENAI_API_KEY": "sk-xxxx",
+                "OPENAI_MODEL": "gpt-4o-mini"
+            }
+        }
+    ],
+    "ENABLED_SERVICES": [
+        "OpenAI",
+        "Grok"
+    ],
+    "HIDDEN_GRADIO_DETAILS": true,
+    "PDF2ZH_LANG_FROM": "English",
+    "PDF2ZH_LANG_TO": "Simplified Chinese",
+    "NOTO_FONT_PATH": "/app/SourceHanSerifCN-Regular.ttf"
+}
+```
+
+[⬆️ Back to top](#toc)

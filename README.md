@@ -235,6 +235,7 @@ In the following table, we list all advanced options for reference:
 | `-f`, `-c`     | [Exceptions](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#exceptions)                | `pdf2zh example.pdf -f "(MS.*)"`               |
 | `-cp`          | Compatibility Mode                                                                                            | `pdf2zh example.pdf --compatible`              |
 | `--skip-subset-fonts` | [Skip font subset](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#font-subset)  | `pdf2zh example.pdf --skip-subset-fonts`       |
+| `--ignore-cache` | [Ignore translate cache](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#cache)       | `pdf2zh example.pdf --ignore-cache`            |
 | `--share`      | Public link                                                                                                   | `pdf2zh -i --share`                            |
 | `--authorized` | [Authorization](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#auth)                   | `pdf2zh -i --authorized users.txt [auth.html]` |
 | `--prompt`     | [Custom Prompt](https://github.com/Byaidu/PDFMathTranslate/blob/main/docs/ADVANCED.md#prompt)                 | `pdf2zh --prompt [prompt.txt]`                 |
@@ -249,10 +250,13 @@ For detailed explanations, please refer to our document about [Advanced Usage](.
 
 <h2 id="downstream">Secondary Development (APIs)</h2>
 
-For downstream applications, please refer to our document about [API Details](./docs/APIS.md) for futher information about:
+The current pdf2zh API is temporarily deprecated. The API will be provided again after [pdf2zh 2.0](https://github.com/Byaidu/PDFMathTranslate/issues/586) is released. For users who need programmatic access, please use the `babeldoc.high_level.async_translate` function of [BabelDOC](https://github.com/funstory-ai/BabelDOC).
+
+This API being temporarily deprecated means: the relevant code will not be removed for now, but no technical support will be provided, and no bug fixes will be made.
+<!-- For downstream applications, please refer to our document about [API Details](./docs/APIS.md) for futher information about:
 
 - [Python API](./docs/APIS.md#api-python), how to use the program in other Python programs
-- [HTTP API](./docs/APIS.md#api-http), how to communicate with a server with the program installed
+- [HTTP API](./docs/APIS.md#api-http), how to communicate with a server with the program installed -->
 
 <h2 id="todo">TODOs</h2>
 
