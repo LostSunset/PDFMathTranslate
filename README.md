@@ -14,6 +14,7 @@ English | [简体中文](docs/README_zh-CN.md) | [繁體中文](docs/README_zh-T
     <img src="https://static.pepy.tech/badge/pdf2zh"></a>
   <a href="https://hub.docker.com/repository/docker/byaidu/pdf2zh">
     <img src="https://img.shields.io/docker/pulls/byaidu/pdf2zh"></a>
+  <a href="https://hellogithub.com/repository/8ec2cfd3ef744762bf531232fa32bc47" target="_blank"><img src="https://api.hellogithub.com/v1/widgets/recommend.svg?rid=8ec2cfd3ef744762bf531232fa32bc47&claim_uid=JQ0yfeBNjaTuqDU&theme=small" alt="Featured｜HelloGitHub" /></a>
   <a href="https://gitcode.com/Byaidu/PDFMathTranslate/overview">
     <img src="https://gitcode.com/Byaidu/PDFMathTranslate/star/badge.svg"></a>
   <a href="https://huggingface.co/spaces/reycn/PDFMathTranslate-Docker">
@@ -129,7 +130,7 @@ pip install pdf2zh
    pdf2zh -i
    ```
 
-4. If your browswer has not been started automatically, goto
+4. If your browser has not been started automatically, goto
 
    ```bash
    http://localhost:7860/
@@ -265,7 +266,7 @@ For detailed explanations, please refer to our document about [Advanced Usage](.
 
 <h2 id="downstream">Secondary Development (APIs)</h2>
 
-For downstream applications, please refer to our document about [API Details](./docs/APIS.md) for futher information about:
+For downstream applications, please refer to our document about [API Details](./docs/APIS.md) for further information about:
 
 - [Python API](./docs/APIS.md#api-python), how to use the program in other Python programs
 - [HTTP API](./docs/APIS.md#api-http), how to communicate with a server with the program installed
